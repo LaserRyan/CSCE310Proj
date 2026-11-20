@@ -1,0 +1,5 @@
+# Store text with LF line endings; check out as the OS prefers.
+* text=auto
+# Shell scripts must keep LF or they won't run on Mac/Linux.
+mvnw text eol=lf
+*.png binary

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dev tool, not part of the product: opens each screen of both apps and saves a PNG
+     to docs/screenshots. Needs the services running. Run:
+       mvnw -pl clients/screenshots -am install -DskipTests
+       mvnw -pl clients/screenshots javafx:run -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>bookstore</groupId>
+        <artifactId>bookstore-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>screenshots</artifactId>
+    <name>Screenshot tool (dev only)</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>bookstore</groupId>
+            <artifactId>customer-app</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>bookstore</groupId>
+            <artifactId>manager-app</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>bookstore.tools.Screenshots</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

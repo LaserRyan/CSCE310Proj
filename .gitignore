@@ -1,0 +1,13 @@
+target/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+backend/order_service/bills/
+.idea/
+.vscode/
+*.iml
+
+# Course handout: the instructor's document, not ours to republish
+Project.pdf

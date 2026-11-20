@@ -1,0 +1,36 @@
+# Databases for the bookstore. Start with:  docker compose up -d
+# Host ports are 3307 / 27018 so they don't clash with a MySQL or MongoDB
+# you may already have installed.
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: bookstore-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/mysql:/docker-entrypoint-initdb.d:ro
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-prootpass"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  mongo:
+    image: mongo:7.0
+    container_name: bookstore-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  mysql-data:
+  mongo-data:

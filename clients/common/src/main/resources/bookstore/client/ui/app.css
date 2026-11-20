@@ -1,0 +1,78 @@
+/* Shared look for both desktop apps. */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-base: #f4f1ea;
+    -fx-background-color: #faf8f3;
+    -fx-accent: #2f5d50;
+    -fx-focus-color: #2f5d50;
+}
+
+.app-bar {
+    -fx-background-color: #2f5d50;
+    -fx-padding: 10 16 10 16;
+}
+.app-bar .label { -fx-text-fill: white; }
+.app-bar .app-title { -fx-font-size: 17px; -fx-font-weight: bold; }
+.app-bar .button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.6);
+    -fx-border-radius: 4;
+    -fx-text-fill: white;
+}
+.app-bar .button:hover { -fx-background-color: rgba(255,255,255,0.15); }
+
+.toolbar { -fx-background-color: #efebe1; -fx-border-color: transparent transparent #ddd6c6 transparent; }
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #e3ddcf;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0, 0, 4);
+}
+.login-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2f5d50; }
+
+.button.primary {
+    -fx-background-color: #2f5d50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+.button.primary:hover { -fx-background-color: #24493f; }
+
+.section-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2f5d50; }
+.book-title { -fx-font-size: 18px; -fx-font-weight: bold; }
+.muted { -fx-text-fill: #7a7468; }
+.error-text { -fx-text-fill: #b3261e; }
+.ok-text { -fx-text-fill: #1d6b2f; }
+.total { -fx-font-size: 16px; -fx-font-weight: bold; }
+
+.stat {
+    -fx-background-color: white;
+    -fx-border-color: #e3ddcf;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10 14 10 14;
+    -fx-min-width: 130;
+}
+.stat-value { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2f5d50; }
+
+.status-PAID { -fx-text-fill: #1d6b2f; -fx-font-weight: bold; }
+.status-PENDING { -fx-text-fill: #a35a00; -fx-font-weight: bold; }
+
+.review-card {
+    -fx-background-color: white;
+    -fx-border-color: #e9e4d8;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+}
+
+.table-view { -fx-background-color: white; }
+
+/* Chart series in the app's colours: bought = green, rented = amber. */
+.default-color0.chart-bar { -fx-bar-fill: #2f5d50; }
+.default-color1.chart-bar { -fx-bar-fill: #d49a3a; }
+.chart-legend-item-symbol.default-color0 { -fx-background-color: #2f5d50; }
+.chart-legend-item-symbol.default-color1 { -fx-background-color: #d49a3a; }
